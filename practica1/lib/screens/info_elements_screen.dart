@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'detail_screens.dart';
 
 class InfoElementsScreen extends StatefulWidget {
   const InfoElementsScreen({super.key});
@@ -245,6 +246,30 @@ class _InfoElementsScreenState extends State<InfoElementsScreen> {
                 ),
               ),
             ),
+
+                           const SizedBox(height: 16),
+
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const InfoElementsDetailScreen(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        backgroundColor: const Color(0xFF1976D2),
+                      ),
+                      child: const Text(
+                        'ABRIR LA OTRA SCREEN',
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
+                    ),
+                  ),
           ],
         ),
       ),

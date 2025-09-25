@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'detail_screens.dart';
+
 
 class ButtonsScreen extends StatefulWidget {
   const ButtonsScreen({super.key});
@@ -217,7 +219,30 @@ class _ButtonsScreenState extends State<ButtonsScreen> {
                   color: Color(0xFF424242),
                 ),
               ),
-            ),
+            ),     // Botón para abrir Detail Screen
+                  const SizedBox(height: 16),
+
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ButtonsDetailScreen(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        backgroundColor: const Color(0xFF1976D2),
+                      ),
+                      child: const Text(
+                        'ABRIR LA OTRA SCREEN',
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
+                    ),
+                  ),
           ],
         ),
       ),

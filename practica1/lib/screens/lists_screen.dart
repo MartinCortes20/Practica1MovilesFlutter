@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'detail_screens.dart';
 
 class ListsScreen extends StatefulWidget {
   const ListsScreen({super.key});
@@ -145,6 +146,29 @@ class _ListsScreenState extends State<ListsScreen> {
               ),
             ),
           ),
+                        const SizedBox(height: 16),
+
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ListsDetailScreen(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        backgroundColor: const Color(0xFF1976D2),
+                      ),
+                      child: const Text(
+                        'ABRIR LA OTRA SCREEN',
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
+                    ),
+                  ),
         ],
       ),
     );
